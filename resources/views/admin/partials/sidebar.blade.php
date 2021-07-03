@@ -68,6 +68,32 @@
                 </li>
             </ul>
         </li>
+        <li class="c-sidebar-nav-title">Pages</li>
+        <li class="c-sidebar-nav-item c-sidebar-nav-dropdown">
+            <a class="c-sidebar-nav-link c-sidebar-nav-dropdown-toggle" href="#">
+                <svg class="c-sidebar-nav-icon">
+                    <use xlink:href="https://coreui.io/demo/free/3.4.0/vendors/@coreui/icons/svg/free.svg#cil-puzzle">
+                    </use>
+                </svg>
+                Public
+            </a>
+            <ul class="c-sidebar-nav-dropdown-items">
+                <li class="c-sidebar-nav-item">
+                    <a class="c-sidebar-nav-link" href="{{ Route('admin.about.index') }}">
+                        <span class="c-sidebar-nav-icon"></span>
+                        About
+                    </a>
+                </li>
+            </ul>
+            <ul class="c-sidebar-nav-dropdown-items">
+                <li class="c-sidebar-nav-item">
+                    <a class="c-sidebar-nav-link" href="{{ Route('admin.team.index') }}">
+                        <span class="c-sidebar-nav-icon"></span>
+                        Team
+                    </a>
+                </li>
+            </ul>
+        </li>
     </ul>
     <button class="c-sidebar-minimizer c-class-toggler" type="button" data-target="_parent"
         data-class="c-sidebar-minimized"></button>

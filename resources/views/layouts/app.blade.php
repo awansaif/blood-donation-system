@@ -35,7 +35,7 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
+                        <a class="nav-link" href="{{ Route('about') }}">About</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ Route('news')  }}">News</a>
@@ -46,7 +46,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ Route('org.showLoginForm') }}">Organizations</a>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="#signup">Contact</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ Route('contact') }}">Contact</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('donor.showLoginForm') }}">Login</a>
                     </li>

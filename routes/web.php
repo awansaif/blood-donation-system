@@ -6,6 +6,8 @@ use App\Http\Controllers\Admin\CityController;
 use App\Http\Controllers\Admin\DonorController;
 use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\OrganizationController;
+use App\Http\Controllers\Admin\Pages\AboutController;
+use App\Http\Controllers\Admin\TeamController;
 use App\Http\Controllers\Donor\ProfileController;
 use App\Http\Controllers\Donor\SettingController;
 use App\Http\Controllers\DonorAuthLoginController;
@@ -15,13 +17,15 @@ use App\Http\Controllers\Org\OfficeController;
 use App\Http\Controllers\Org\ProfileController as OrgProfileController;
 use App\Http\Controllers\Org\SettingController as OrgSettingController;
 use App\Http\Controllers\PublicPagesController;
+use App\Models\AboutPage;
 use App\Models\News;
 use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
     return view('welcome', [
-        'news' => News::take(3)->latest()->get()
+        'news' => News::take(3)->latest()->get(),
+        'about' => AboutPage::first()
     ]);
 });
 
@@ -41,6 +45,9 @@ Route::prefix('admin')
             Route::resource('bloodgroup', BloodGroupController::class);
             Route::resource('news', NewsController::class);
             Route::resource('organization', OrganizationController::class);
+
+            Route::resource('about', AboutController::class);
+            Route::resource('team', TeamController::class);
             Route::get('logout', [LoginController::class, 'logout'])->name('logout');
         });
     });
@@ -90,10 +97,12 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
+Route::get('about', [PublicPagesController::class, 'about'])->name('about');
 Route::get('news', [PublicPagesController::class, 'news'])->name('news');
 Route::get('news/{slug}', [PublicPagesController::class, 'signleNews'])->name('signleNews');
 
 Route::get('/organization', [PublicPagesController::class, 'organization'])->name('org.showLoginForm');
 
 
+Route::get('/contact', [PublicPagesController::class, 'contact'])->name('contact');
 Route::get('/donors', [PublicPagesController::class, 'donors'])->name('donor');

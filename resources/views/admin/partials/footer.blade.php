@@ -1,9 +1,9 @@
 <footer class="c-footer">
     <div>
-        <a href="https://coreui.io">CoreUI</a> © 2020
-        creativeLabs.
+        <a href="{{ env('APP_URL') }}">Blood Group</a> © 2021
+        HST Software House.
     </div>
     <div class="ml-auto">
-        Powered by&nbsp;<a href="https://coreui.io/">CoreUI</a>
+        Powered by&nbsp;<a href="{{ env('APP_URL') }}">Life</a>
     </div>
 </footer>
